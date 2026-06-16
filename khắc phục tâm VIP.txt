@@ -1,0 +1,46 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class GameConfig {
+    private Map<String, Integer> advancedWeaponManagement;
+    private Map<String, Integer> dynamicTeamManagement;
+
+    public GameConfig() {
+        advancedWeaponManagement = new HashMap<>();
+        advancedWeaponManagement.put("RealTimeWeapon Customization", 1);
+        advancedWeaponManagement.put("DynamicWeapon Fire Rate Adjustment", 1);
+        advancedWeaponManagement.put("InteractiveWeapon Handling Feedback", 1);
+        advancedWeaponManagement.put("AdvancedWeapon Recoil Control", 1);
+        advancedWeaponManagement.put("RealTimeWeapon Attachment Scaling", 1);
+        advancedWeaponManagement.put("DynamicWeapon Skin Customization", 1);
+        advancedWeaponManagement.put("InteractiveWeapon Damage Modifiers", 1);
+        advancedWeaponManagement.put("AdvancedAmmo Management System", 1);
+        advancedWeaponManagement.put("RealTimeWeapon Accuracy Feedback", 1);
+        advancedWeaponManagement.put("QuickWeapon Reset Options", 1);
+
+        dynamicTeamManagement = new HashMap<>();
+        dynamicTeamManagement.put("RealTimeTeam Strategy Feedback", 1);
+        dynamicTeamManagement.put("DynamicTeam Role Assignment", 1);
+        dynamicTeamManagement.put("InteractiveTeam Coordination", 1);
+        dynamicTeamManagement.put("AdvancedTeam Performance Tracking", 1);
+        dynamicTeamManagement.put("RealTimeTeam Chat Optimization", 1);
+        dynamicTeamManagement.put("DynamicTeam Objective Scaling", 1);
+        dynamicTeamManagement.put("InteractiveTeam Buffs and Debuffs", 1);
+        dynamicTeamManagement.put("AdvancedTeam Skill Synchronization", 1);
+        dynamicTeamManagement.put("RealTimeTeam Member Performance Analytics", 1);
+        dynamicTeamManagement.put("QuickTeam Management Reset", 1);
+    }
+
+    public void printConfig() {
+        System.out.println("AdvancedWeaponManagement:");
+        advancedWeaponManagement.forEach((key, value) -> System.out.println("  " + key + " = " + value));
+        
+        System.out.println("DynamicTeamManagement:");
+        dynamicTeamManagement.forEach((key, value) -> System.out.println("  " + key + " = " + value));
+    }
+
+    public static void main(String[] args) {
+        GameConfig config = new GameConfig();
+        config.printConfig();
+    }
+}
