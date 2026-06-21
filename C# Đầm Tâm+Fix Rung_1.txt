@@ -8,75 +8,75 @@
 [Package]
 package=com.dts.freefireth
 variant=Free Fire TH
-version_code=578
-profile_id=ULTRA_JK0IAMBS
+version_code=465
+profile_id=ULTRA_1YOM1SEN
 
 [Device]
 model=Generic ARMv8
 manufacturer=Standard
 platform=ios
-timestamp=2026-06-21T00:51:06.903Z
+timestamp=2026-06-21T01:18:42.932Z
 
 [Config]
 level=advanced
-feature_count=37
-version=11.9.5
+feature_count=47
+version=16.1.29
 
 [Optimizations]
 
 [Optimizations.clean_cache]
 enabled=true
 paths=/tmp,/cache
-maxAgeHours=18
+maxAgeHours=23
 deepScan=true
 secureDelete=true
 wipeOnBoot=true
 excludeSystem=false
-estimatedFreeMB=8053
+estimatedFreeMB=3481
 
 [Optimizations.free_ram]
 enabled=true
 dropCaches=3
 killIdle=true
-swappiness=23
+swappiness=9
 zramEnabled=true
-zramSizeMB=5510
+zramSizeMB=7359
 compactMemory=true
 clearPageCache=true
 clearDentries=true
 oomAdjust=true
-targetFreeMB=12856
+targetFreeMB=3130
 
 [Optimizations.cpu_tune]
 enabled=true
-governor=performance
-maxFreqMHz=3114
-minFreqMHz=305
+governor=conservative
+maxFreqMHz=2958
+minFreqMHz=463
 boost=true
 thermalThrottle=disabled
 affinity=true
-isolatedCPUs=1-2
-perfBias=7
+isolatedCPUs=6-7
+perfBias=15
 
 [Optimizations.gpu_boost]
 enabled=true
 governor=performance
-maxClockMHz=623
+maxClockMHz=751
 renderBackend=opengl
-fpsTarget=120
+fpsTarget=60
 turboMode=true
 reduceJank=true
 hardwareOverlay=true
 
 [Optimizations.network_tune]
 enabled=true
-tcpCongestion=cubic
+tcpCongestion=reno
 tcpFastOpen=true
 dnsOptimized=true
-mtu=1500
+mtu=9000
 bufferSizes.rmem=262144
 bufferSizes.wmem=262144
-qdisc=fq
+qdisc=cake
 
 [Optimizations.battery_optimize]
 enabled=true
@@ -89,21 +89,21 @@ animationScale=0
 
 [Optimizations.io_tune]
 enabled=true
-scheduler=kyber
-readAheadKB=4563
+scheduler=bfq
+readAheadKB=8013
 trimEnabled=true
 journaling=writeback
 
 [Optimizations.thermal_control]
 enabled=true
-tripPointC=57
-throttlePct=68
-coolingDevice=cpufreq
+tripPointC=70
+throttlePct=90
+coolingDevice=gpufreq
 multiZone=true
 
 [Optimizations.clean_junk]
 enabled=true
-paths=/tmp,/cache,/data/logs
+paths=/sdcard/Download,/sdcard/DCIM/.thumbnails
 fileTypes=*.tmp,*.log,*.cache,*.thumb,*.bak
 deepScan=true
 
@@ -119,13 +119,13 @@ aggressive=true
 
 [Optimizations.force_doze]
 enabled=true
-idleTimeout=389514
+idleTimeout=300440
 ignoreMotion=true
 
 [Optimizations.limit_background]
 enabled=true
-maxProcesses=2
-killDelay=16857
+maxProcesses=4
+killDelay=15099
 
 [Optimizations.disable_animation]
 enabled=true
@@ -135,51 +135,56 @@ durationScale=0
 [Optimizations.reduce_resolution]
 enabled=true
 scale=0.5
-dpi=281
+dpi=397
 
 [Optimizations.aim_lock]
 enabled=true
-smoothness=97
-fov=2
+smoothness=87
+fov=12
 targetBone=chest
 visibilityCheck=true
 prediction=true
 
 [Optimizations.aim_assist]
 enabled=true
-strength=30
-fov=30
-sticky=false
+strength=49
+fov=21
+sticky=true
 
 [Optimizations.no_recoil]
 enabled=true
-compensationX=97
-compensationY=95
+compensationX=82
+compensationY=82
 weaponSpecific=true
 randomize=true
 
 [Optimizations.trigger_bot]
 enabled=true
-delayMs=7
-key=shift
+delayMs=3
+key=mouse5
 autoFire=true
+
+[Optimizations.rapid_fire]
+enabled=true
+fireRate=1
+burstMode=true
 
 [Optimizations.silent_aim]
 enabled=true
-fov=5
-smooth=50
+fov=3
+smooth=65
 
 [Optimizations.fps_boost]
 enabled=true
-targetFPS=120
+targetFPS=144
 reduceQuality=true
-disableVignette=false
+disableVignette=true
 
 [Optimizations.ping_reduce]
 enabled=true
 dnsOptimization=true
 routeOptimization=true
-bufferSize=122340
+bufferSize=81604
 
 [Optimizations.lag_fix]
 enabled=true
@@ -189,8 +194,8 @@ fixFrameDrop=true
 
 [Optimizations.frame_time_stabilize]
 enabled=true
-targetMs=16.67
-varianceThreshold=5
+targetMs=11.11
+varianceThreshold=3
 
 [Optimizations.force_vsync_off]
 enabled=true
@@ -200,7 +205,7 @@ vulkan=true
 [Optimizations.reduce_texture]
 enabled=true
 quality=low
-mipmapLevel=0
+mipmapLevel=1
 
 [Optimizations.disable_shadow]
 enabled=true
@@ -221,16 +226,16 @@ dof=false
 motionblur=false
 chromatic=false
 
-[Optimizations.reduce_particle]
-enabled=true
-maxParticles=1
-quality=low
-
 [Optimizations.vpn_integrated]
 enabled=true
-protocol=openvpn
-server=asia-se
+protocol=wireguard
+server=eu-west
 killSwitch=true
+
+[Optimizations.proxy_auto]
+enabled=true
+type=shadowsocks
+rotateInterval=1605
 
 [Optimizations.anti_ban]
 enabled=true
@@ -239,10 +244,15 @@ randomizeMAC=true
 clearTraces=true
 hideRoot=true
 
+[Optimizations.encrypt_data]
+enabled=true
+algorithm=ChaCha20
+scope=app
+
 [Optimizations.anti_malware]
 enabled=true
 realTimeScan=true
-scanInterval=19103
+scanInterval=84326
 
 [Optimizations.clear_traces]
 enabled=true
@@ -251,16 +261,51 @@ clearHistory=true
 clearClipboard=true
 clearLogs=true
 
+[Optimizations.hide_root]
+enabled=true
+hideMagisk=true
+hideSuperSU=true
+bypassDetection=true
+
+[Optimizations.auto_backup]
+enabled=true
+targets=/data/data,/sdcard
+scheduleHours=12
+cloudSync=true
+
 [Optimizations.quick_restore]
 enabled=true
 verifyIntegrity=true
 selectiveRestore=true
 
+[Optimizations.hidden_screenshot]
+enabled=true
+bypassDetection=true
+format=png
+
+[Optimizations.screen_record]
+enabled=true
+resolution=720p
+bitrate=12
+audioSource=mic
+
 [Optimizations.auto_macro]
 enabled=true
-scriptLength=247
-loopCount=3974
+scriptLength=310
+loopCount=9985
 randomizeDelay=true
+
+[Optimizations.custom_gesture]
+enabled=true
+swipeActions=left,right,up,down
+tapActions=single,double,long
+edgeGestures=true
+
+[Optimizations.floating_overlay]
+enabled=true
+type=cpu
+position=top-left
+draggable=true
 
 [Optimizations.custom_notification]
 enabled=true
@@ -268,12 +313,25 @@ filterKeywords=
 blockSpam=true
 silenceUnknown=true
 
+[Optimizations.volume_boost]
+enabled=true
+maxVolume=161
+equalizer.bass=11
+equalizer.mid=0
+equalizer.treble=1
+
+[Optimizations.brightness_max]
+enabled=true
+level=339
+autoDim=false
+nightMode=false
+
 [Boost]
-cpu_percent=108
-gpu_percent=84
-ram_saved_mb=264180
-battery_extend_percent=132
-cache_cleared_mb=262145
-fps_gain=222
-ping_reduction=126
+cpu_percent=150
+gpu_percent=132
+ram_saved_mb=73038
+battery_extend_percent=84
+cache_cleared_mb=546281
+fps_gain=174
+ping_reduction=102
 overall_smoothness=99%
